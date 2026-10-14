@@ -1,6 +1,6 @@
 # aws-developer
 AWS 잘하는 개발자 되기
-- [AWS 잘하는 개발자 되기](https://goldenrabbit.co.kr/product/aws-%ec%9e%98%ed%95%98%eb%8a%94-%eb%b0%b1%ec%97%94%eb%93%9c-%ea%b0%9c%eb%b0%9c%ec%9e%90-%eb%90%98%ea%b8%b0/)
+- [AWS 잘하는 개발자 되기](https://goldenrabbit.co.kr/books/9791194383512)
 
 ## 0.3.1 맥OS에서 클라우드포메이션 템플릿 관리하기 린터 설치 명령어 추가
 
@@ -123,4 +123,3 @@ cfn-lint --version
 ## 출판사 정보
 <!-- 必須事項 -->
 - [골든래빗](https://goldenrabbit.co.kr/)
-- [골든래빗 IT 개발 서적](https://goldenrabbit.co.kr/product-category/books/it/)
