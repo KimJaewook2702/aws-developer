@@ -1,0 +1,135 @@
+# aws-developer
+AWS 잘하는 개발자 되기
+- [AWS 잘하는 개발자 되기](https://goldenrabbit.co.kr/books/9791194383512)
+
+## 깃허브 리포지토리 이전 안내
+
+이 리포지토리는 기존 GitHub 계정에서 현재 계정으로 이전되었습니다.
+
+- **이전 일자**: 2026-10-15
+- **새 리포지토리 주소**: https://github.com/KimJaewook2702/aws-developer
+- **이전 사유**: 계정 정리 (기존 계정 삭제 예정)
+
+## 0.3.1 맥OS에서 클라우드포메이션 템플릿 관리하기 린터 설치 명령어 추가
+
+> **수정일:** 2025-09-29  
+> **페이지:** 34페이지
+
+책 34쪽에서는 맥OS 기본 파이썬 환경을 기준으로 설명하고 있습니다.
+
+맥OS에는 기본적으로 파이썬이 설치되어 있기 때문에 별도의 파이썬 설치와 pip 설치가 반드시 필요한 것은 아닙니다.
+기본 파이썬 환경을 그대로 사용하셔도 무방하지만, 버전 관리와 안정성을 고려한다면, Homebrew 기반의 별도 설치를 권장드립니다.
+
+따라서 Homebrew로 파이썬을 설치하는 방법으로 명령어를 추가하였습니다.
+
+또한 cfn-lint 설치 시 권한 문제나 PATH 설정으로 인해 실행이 되지 않을 경우를 대비해 관련 추가 명령어도 함께 기재하였습니다.
+
+※ Homebrew는 패키지 관리 도구를 이용하면 파이썬을 비롯한 다양한 개발 도구를 간단하게 설치하고 관리할 수 있습니다.
+
+### 책에 기재된 기존 방식
+
+```bash
+# ➊ 로컬 환경에 파이썬 설치 확인
+python3 --version
+# ➋ 파이썬 패키지인 pip를 최신 버전으로 업그레이드
+python3 -m pip install --upgrade pip
+# ➌ pip를 이용하여 클라우드포메이션 린터 설치
+pip3 install cfn-lint
+# ➍ 클라우드포메이션 린터 버전 확인
+cfn-lint --version
+```
+
+맥OS에서 기본 파이썬으로 설치한 패키지(예: cfn-lint)가 터미널에서 인식되지 않는 경우, PATH 환경 변수에 설치 경로를 추가해야 합니다.
+
+터미널에 아래 명령어를 입력하면 현재 사용 중인 쉘을 확인할 수 있습니다.
+
+#### 설치 중 에러가 발생하는 경우
+
+```bash
+# 현재 사용 중인 쉘(shell) 경로를 출력
+echo $SHELL
+```
+
+- /bin/zsh → zsh
+- /bin/bash → bash
+
+#### zsh일 경우
+
+[Python/3.x]에는 파이썬 버전을 입력합니다.
+
+```bash
+# zsh 설정 파일에 파이썬 사용자 설치 경로를 추가
+echo 'export PATH=$HOME/Library/Python/3.x/bin:$PATH' >> ~/.zshrc
+
+# 변경 사항 적용
+source ~/.zshrc
+```
+
+#### bash일 경우
+
+[Python/3.x]에는 파이썬 버전을 입력합니다.
+
+```bash
+# bash 설정 파일에 파이썬 사용자 설치 경로를 추가
+echo 'export PATH=$HOME/Library/Python/3.x/bin:$PATH' >> ~/.bash_profile
+
+# 변경 사항 적용
+source ~/.bash_profile
+```
+
+#### PATH 반영 확인
+
+PATH 추가 후 아래 명령어로 반영 여부를 확인할 수 있습니다.
+
+```bash
+# PATH 환경 변수에 추가한 경로가 포함되었는지 확인
+echo $PATH
+```
+
+#### 린터 설치
+
+```bash
+# 권한 문제나 PATH 문제 발생 시, --user 옵션으로 설치
+python3 -m pip install --user cfn-lint
+
+# cfn-lint 버전 확인
+cfn-lint --version
+```
+
+### Homebrew를 이용한 설치 과정
+
+```bash
+# Homebrew가 설치되어 있는지 확인합니다.
+brew -v
+
+# Homebrew가 설치되어 있지 않다면 설치합니다.
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 파이썬을 설치합니다.
+brew install python
+
+# 파이썬 설치를 확인합니다.
+python3 --version
+
+# 파이썬 패키지인 pip를 최신 버전으로 업그레이드합니다.
+python3 -m pip install --upgrade pip
+
+# pip를 이용하여 클라우드포메이션 린터를 설치합니다.
+pip3 install cfn-lint
+
+# 클라우드포메이션 린터 버전을 확인합니다.
+cfn-lint --version
+```
+
+## 책 정보
+<!-- 必須事項 -->
+안녕하세요 저자 김재욱입니다. 이 책을 읽어주신 여러분들 감사합니다.
+
+이 책에서는 인프라 설계부터 구축까지, 기초부터 실무에서 활용되는 내용까지 폭넓게 다루고 있습니다.
+실습을 진행하시면서 모르는 부분이나 코드에 대해 궁금한 점이 있다면, 언제든지 자유롭게 질문해 주세요.
+
+## 출판사 정보
+<!-- 必須事項 -->
+- [골든래빗](https://goldenrabbit.co.kr/)
+
+
